@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <h1>An unexpected error has occurred, and it's a bad one</h1>
+    <p>This is our bad. Don't you worry about it.</p>
+    <p><a href="{{ url_for('main.game_home') }}">Click here to pretend nothing happened</a></p>
+{% endblock %}

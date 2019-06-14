@@ -1,0 +1,52 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+{% if form %}
+    {% if current_user %}
+    <h1>Welcome to the IP Game, {{ current_user.username }}!</h1>
+     {% else %}
+    <h1>Welcome to the IP Game, Man!</h1>
+    {% endif %}
+    <h3>Create your own piece of Intellectual Property and grow it to be the most important in the world. Or else!</h3>
+    <div></div>
+
+    <h2>Available IPs:</h2>
+    {% for ip in ips %}
+    <div><p>{{ ip.name }} worth: <b>${{ ip.estimated_value }}B</b></p></div>
+    {% endfor %}
+
+    <h5>Take some notes:</h5>
+        <form action="" method="post">
+            {{ form.hidden_tag() }}
+            <p>
+                {{ form.note.label }}<br>
+                {{ form.note(cols=32, rows=4) }}<br>
+                {% for error in form.note.errors %}
+                <span style="color: red;">[{{ error }}]</span>
+                {% endfor %}
+            </p>
+            <p>{{ form.submit() }}</p>
+        </form>
+    {% else %}
+    <h3>Find other gamers around the world.</h3>
+    {% endif %}
+
+    <h5>Notes from around the world:</h5>
+    {% for note in notes %}
+        {% include '_note.html' %}
+    {% endfor %}
+    <nav aria-label="...">
+        <ul class="pager">
+            <li class="previous{% if not prev_url %} disabled{% endif %}">
+                <a href="{{ prev_url or '#'}}">
+                    <span aria-hidden="true">&larr;</span> Newer posts
+                </a>
+            </li>
+            <li class="next{% if not next_url %} disabled{% endif %}">
+                <a href="{{ next_url or '#' }}">
+                    Older posts <span aria-hidden="true">&rarr;</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+{% endblock %}
