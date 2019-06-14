@@ -1,0 +1,16 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+.cache
+
+# Config
+secret.env
+
+# Logs
+logs/
+
+# pycharm
+.idea/
+
+# os
+.DS_Store
