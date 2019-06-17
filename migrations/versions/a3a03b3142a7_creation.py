@@ -25,8 +25,8 @@ def upgrade():
     sa.ForeignKeyConstraint(['ip_id'], ['ip.id'], ),
     sa.PrimaryKeyConstraint('id')
     )
-    with op.batch_alter_table('ip') as batch_op:
-        batch_op.drop_column('owner_id')
+    # with op.batch_alter_table('ip') as batch_op:
+    #     batch_op.drop_column('owner_id')
     # ### end Alembic commands ###
 
 
