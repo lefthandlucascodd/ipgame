@@ -118,7 +118,7 @@ def global_hub():
 @login_required
 def new_ip():
     form = IPForm()
-    if form.validate_on_submit():
+    if form.validçate_on_submit():
         ip = IntellectualProperty(
             name=form.name.data,
             description=form.description.data,

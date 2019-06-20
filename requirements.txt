@@ -7,5 +7,7 @@ flask-migrate
 flask-moment==0.7.0
 flask-sqlalchemy
 flask-wtf
+gunicorn
+psycopg2
 pyjwt==1.7.1
 python-dotenv
