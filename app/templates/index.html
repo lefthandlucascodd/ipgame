@@ -12,7 +12,13 @@
 
     <h2>Available IPs:</h2>
     {% for ip in ips %}
-    <div><p>{{ ip.name }} worth: <b>${{ ip.estimated_value }}B</b></p></div>
+    <div>
+        <p>
+            <a href="{{ url_for('main.ip_details', ip_id=ip.id)}}">{{ ip.name }}</a> worth: <b>
+            ${{ ip.estimated_value }}B
+        </b>
+        </p>
+    </div>
     {% endfor %}
 
     <h5>Take some notes:</h5>

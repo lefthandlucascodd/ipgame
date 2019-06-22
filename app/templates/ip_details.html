@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block app_content %}
+    <table class="table table-hover">
+        <tr>
+            <td>
+                <h1>A Wonderful Piece of Intellectual Property: {{ ip.name }}</h1>
+                <p>What's it all about then?: {{ ip.description }}</p>
+                <p>Clout!: {{ip.clout }}</p>
+                <p>Worth a bit, innit?: ${{ ip.estimated_value}}B</p><p>
+            </td>
+        </tr>
+    </table>
+{% endblock %}

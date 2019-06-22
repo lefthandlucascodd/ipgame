@@ -131,6 +131,13 @@ def new_ip():
     return render_template('new_ip.html', title='Create Your New IP', form=form)
 
 
+@bp.route('/ip/<ip_id>')
+@login_required
+def ip_details(ip_id):
+    ip_for_page = IntellectualProperty.query.filter_by(id=ip_id).first_or_404()
+    return render_template('ip_details.html', ip=ip_for_page)
+
+
 @bp.route('/search')
 @login_required
 def search():
