@@ -138,6 +138,13 @@ def ip_details(ip_id):
     return render_template('ip_details.html', ip=ip_for_page)
 
 
+@bp.route('/ip/<ip_name>/popup')
+@login_required
+def ip_popup(ip_name):
+    ip_for_page = IntellectualProperty.query.filter_by(name=ip_name).first_or_404()
+    return render_template('ip_popup.html', ip=ip_for_page)
+
+
 @bp.route('/search')
 @login_required
 def search():

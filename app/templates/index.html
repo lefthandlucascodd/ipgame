@@ -14,8 +14,9 @@
     {% for ip in ips %}
     <div>
         <p>
-            <a href="{{ url_for('main.ip_details', ip_id=ip.id)}}">{{ ip.name }}</a> worth: <b>
-            ${{ ip.estimated_value }}B
+            <span class="ip_popup">
+                <a href="{{ url_for('main.ip_details', ip_id=ip.id)}}">{{ ip.name }}</a>
+            </span> worth: <b> ${{ ip.estimated_value }}B
         </b>
         </p>
     </div>
